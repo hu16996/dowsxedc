@@ -42,7 +42,7 @@ fs =  open(outfile, 'w')
  
 print('fetching list...')
 content = urllib.request.urlopen(baseurl, timeout=15).read()
-content = base64.b64decode(content.encode("utf-8")).decode("utf-8")
+content = base64.b64decode(content).decode("utf-8")
 
  
 # write the decoded content to file then read line by line
