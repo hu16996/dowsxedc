@@ -195,9 +195,9 @@ else
 	sed -i "9c $(date +%Y-%m-%d) # $md5sum15 google_china" ../version1
 fi
 echo =================
-git add .
-git commit -m "rule update"
-git push
+git -C /root/dowsxedc/rules add .
+git -C /root/dowsxedc/rules commit -m "rule update"
+git -C /root/dowsxedc/rules push
 # ======================================
 rm google.china.conf
 rm apple.china.conf
