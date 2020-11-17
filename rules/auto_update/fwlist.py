@@ -41,7 +41,9 @@ fs =  open(outfile, 'w')
 #fs.write('#\n')
  
 print('fetching list...')
-content = urllib.request.urlopen(baseurl, timeout=15).read().decode('base64')
+content = urllib.request.urlopen(baseurl, timeout=15).read()
+content = base64.b64decode(content.encode("utf-8")).decode("utf-8")
+
  
 # write the decoded content to file then read line by line
 tfs = open(tmpfile, 'w')
