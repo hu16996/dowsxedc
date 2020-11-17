@@ -1,5 +1,7 @@
 #!/bin/bash
 CurrentDate=$(date +%Y-%m-%d)
+workspace=$(dirname $0)
+echo $workspace
 # ======================================
 # get gfwlist for shadowsocks ipset mode
 ./fwlist.py gfwlist_download.conf
@@ -193,9 +195,12 @@ else
 	sed -i "9c $(date +%Y-%m-%d) # $md5sum15 google_china" ../version1
 fi
 echo =================
+git add .
+git commit -m "rule update"
+git push
 # ======================================
 rm google.china.conf
 rm apple.china.conf
-rm gfwlist1.conf gfwlist_download.conf gfwlist_download_tmp.conf chnroute1.txt
+rm gfwlist1.conf gfwlist_download_tmp.conf chnroute1.txt # gfwlist_download.conf
 rm cdn1.txt accelerated-domains.china.conf cdn_download.txt apple_download.txt google_download.txt
 rm WhiteList.txt WhiteList_tmp.txt apnic.txt WhiteList_new.txt Routing.txt
