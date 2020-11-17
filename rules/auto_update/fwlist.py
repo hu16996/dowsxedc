@@ -7,7 +7,7 @@
 # Ref https://code.google.com/p/autoproxy-gfwlist/wiki/Rules    
  
 import sys
-import urllib 
+import urllib.request 
 import re
 import os
 import datetime
