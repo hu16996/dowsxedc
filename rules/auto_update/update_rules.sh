@@ -2,7 +2,6 @@
 CurrentDate=$(date +%Y-%m-%d)
 work_path=$(cd `dirname $0`; pwd)
 cd $work_path
-echo $work_path/../
 # ======================================
 # get gfwlist for shadowsocks ipset mode
 ./fwlist.py gfwlist_download.conf
@@ -196,9 +195,9 @@ else
 	sed -i "9c $(date +%Y-%m-%d) # $md5sum15 google_china" ../version1
 fi
 echo =================
-git -C /root/dowsxedc/rules add .
-git -C /root/dowsxedc/rules commit -m "rule update"
-git -C /root/dowsxedc/rules push
+git -C $work_path/../ add .
+git -C $work_path/../ commit -m "rule update"
+git -C $work_path/../ push
 # ======================================
 rm google.china.conf
 rm apple.china.conf
