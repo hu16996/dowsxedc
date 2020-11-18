@@ -1,5 +1,7 @@
 #!/bin/bash
 CurrentDate=$(date +%Y-%m-%d)
+work_path=$(cd `dirname $0`; pwd)
+cd $work_path
 # ======================================
 # get gfwlist for shadowsocks ipset mode
 ./fwlist.py gfwlist_download.conf
